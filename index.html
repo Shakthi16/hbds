@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Happy Birthday Friend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <style>
@@ -17,8 +18,37 @@
             --rose-gold-shadow: rgba(183, 110, 121, 0.3);
         }
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            background: linear-gradient(to bottom, var(--rose-gold-light), var(--rose-gold-medium));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem 1rem 3rem;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
+
         .fade-in {
             animation: fadeIn 3s ease-in-out;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
         }
 
         @keyframes fadeIn {
@@ -28,10 +58,11 @@
 
         .cake {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
+            width: 280px;
+            height: 280px;
             cursor: pointer;
+            margin: 2rem auto;
+            flex-shrink: 0;
         }
 
         .velas {
@@ -40,10 +71,10 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-left: -10px;
-            margin-top: -33.33px;
-            width: 10px;
-            height: 33.33px;
+            margin-left: -14px;
+            margin-top: -47px;
+            width: 14px;
+            height: 47px;
         }
 
         .velas:after,
@@ -52,7 +83,7 @@
             content: "";
             position: absolute;
             width: 100%;
-            height: 4.44px;
+            height: 6.22px;
         }
 
         .velas:after {
@@ -67,13 +98,13 @@
 
         .fuego {
             border-radius: 100%;
-            box-shadow: 0 0 40px 10px rgba(247, 210, 204, 0.6);
+            box-shadow: 0 0 60px 15px rgba(247, 210, 204, 0.6);
             position: absolute;
-            top: -12px;
+            top: -18px;
             left: 50%;
-            margin-left: -6.67px;
-            width: 13.33px;
-            height: 25px;
+            margin-left: -9.33px;
+            width: 18.66px;
+            height: 35px;
         }
 
         .fuego:nth-child(1) {
@@ -117,10 +148,10 @@
             position: absolute;
             top: 60%;
             left: 50%;
-            margin-left: -55.56px;
-            margin-top: -20px;
-            width: 111.11px;
-            height: 25px;
+            margin-left: -77.78px;
+            margin-top: -28px;
+            width: 155.56px;
+            height: 35px;
             z-index: 10;
         }
 
@@ -130,18 +161,18 @@
             border-radius: 100px;
             content: "";
             position: absolute;
-            width: 10px;
-            height: 20px;
+            width: 14px;
+            height: 28px;
         }
 
         .cobertura:after {
             top: 13.33px;
-            right: 28.57px;
+            right: 40px;
         }
 
         .cobertura:before {
             top: 20px;
-            right: 18.18px;
+            right: 25.45px;
         }
 
         .bizcocho {
@@ -149,9 +180,9 @@
             position: absolute;
             bottom: 0;
             left: 50%;
-            margin-left: -50px;
-            width: 100px;
-            height: 66.67px;
+            margin-left: -70px;
+            width: 140px;
+            height: 93.33px;
         }
 
         .bizcocho:after,
@@ -160,16 +191,16 @@
             content: "";
             position: absolute;
             width: 100%;
-            height: 5px;
+            height: 7px;
         }
 
         .bizcocho:after {
-            top: 20px;
+            top: 28px;
             left: 0;
         }
 
         .bizcocho:before {
-            top: 40px;
+            top: 56px;
             left: 0;
         }
 
@@ -184,18 +215,21 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            margin: 0;
         }
 
         h1 {
             color: var(--rose-gold-dark);
-            font-size: 1em;
-            margin-top: 136px;
+            font-size: 1.75rem;
+            margin-top: 1.5rem;
         }
 
         p {
             color: var(--rose-gold-dark);
-            font-size: 0.8em;
-            line-height: 2em;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 0.5rem;
+            font-weight: 600;
         }
 
         .cake {
@@ -210,29 +244,27 @@
             display: none;
         }
 
+        /* Paper letter styling */
         .paper {
             display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scaleY(0);
-            width: 90%;
-            max-width: 340px;
-            max-height: 420px;
             background: var(--rose-gold-light);
             border: 2px solid var(--rose-gold-accent);
             border-radius: 12px;
-            padding: 30px 25px 25px 25px;
+            padding: 2rem 1.5rem;
             box-shadow: 0 0 20px var(--rose-gold-shadow);
-            transition: transform 0.5s ease-in-out;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            z-index: 50;
+            margin: 1rem auto;
+            max-width: 700px;
+            width: 90%;
+            box-sizing: border-box;
+            transition: opacity 0.5s ease-in-out;
+            overflow: visible;
+            position: relative;
+            opacity: 0;
         }
 
         .paper.open {
             display: block;
-            transform: translate(-50%, -50%) scaleY(1);
+            opacity: 1;
         }
 
         .fireworks {
@@ -258,11 +290,12 @@
             transform: translate(-50%, -50%);
             color: var(--rose-gold-dark);
             font-family: "Source Sans Pro";
-            font-size: 1.5em;
+            font-size: 1.75rem;
             font-weight: 900;
             -webkit-user-select: none;
             user-select: none;
             text-align: center;
+            padding: 0 1rem;
         }
 
         canvas {
@@ -275,6 +308,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin: 2rem 0;
         }
 
         .arrow {
@@ -292,83 +326,198 @@
             }
         }
 
-        /* Adjust heading margin to prevent clipping */
+        /* Letter content */
         .letter h1 {
             margin-top: 0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--rose-gold-dark);
+            font-size: 2.5rem;
+            font-family: 'Pacifico', cursive;
+            line-height: 1.1;
         }
 
         .letter p {
             color: var(--rose-gold-dark);
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-align: left;
         }
 
-        /* Scrollbar styling for paper */
-        .paper::-webkit-scrollbar {
-            width: 8px;
+        .letter p:last-child {
+            margin-bottom: 0;
         }
 
-        .paper::-webkit-scrollbar-track {
-            background: var(--rose-gold-light);
-            border-radius: 10px;
-        }
-
-        .paper::-webkit-scrollbar-thumb {
-            background: var(--rose-gold-accent);
-            border-radius: 10px;
-        }
-
-        /* For Firefox */
-        .paper {
-            scrollbar-width: thin;
-            scrollbar-color: var(--rose-gold-accent) var(--rose-gold-light);
-        }
-
-        /* Cursor pointer for handshake icon */
+        /* Handshake icon */
         .handshake-icon {
             cursor: pointer;
             color: var(--rose-gold-dark);
             transition: color 0.3s ease;
+            font-size: 3.5rem;
+            padding: 1rem;
         }
         .handshake-icon:hover {
             color: var(--rose-gold-accent);
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cake {
+                width: 240px;
+                height: 240px;
+                margin: 1.5rem auto;
+            }
+            .letter h1 {
+                font-size: 2.25rem;
+                margin-bottom: 1.25rem;
+            }
+            .letter p {
+                font-size: 1.05rem;
+                margin-bottom: 1.25rem;
+            }
+            .handshake-icon {
+                font-size: 3rem;
+            }
+            .arrow {
+                left: -40px;
+            }
+            .paper {
+                padding: 1.75rem 1.25rem;
+                margin: 1rem auto;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.5rem 2rem;
+            }
+            .cake {
+                width: 200px;
+                height: 200px;
+                margin: 1rem auto;
+            }
+            .letter h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .letter p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            .handshake-icon {
+                font-size: 2.5rem;
+            }
+            .arrow {
+                left: -30px;
+            }
+            .paper {
+                padding: 1.5rem 1rem;
+                margin: 0.5rem auto;
+            }
+            h1 {
+                font-size: 1.4rem;
+                margin-top: 1rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .cake {
+                width: 180px;
+                height: 180px;
+                margin: 0.75rem auto;
+            }
+            .letter h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.75rem;
+            }
+            .letter p {
+                font-size: 0.95rem;
+                margin-bottom: 0.75rem;
+            }
+            .handshake-icon {
+                font-size: 2.25rem;
+            }
+            .arrow {
+                left: -25px;
+            }
+            .paper {
+                padding: 1.25rem 0.75rem;
+                margin: 0.5rem auto;
+            }
+            h1 {
+                font-size: 1.3rem;
+                margin-top: 0.75rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Better touch targets for mobile */
+        .cake, .handshake-icon {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Ensure content takes full height */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-b from-[#f9e4e0] to-[#e7bfb8] flex items-center justify-center min-h-screen px-4">
-    <div class="text-center fade-in w-full max-w-md">
-        <div class="cake" onclick="blowCandles()" role="button" tabindex="0" aria-label="Birthday cake, click to blow candles">
-            <div class="velas" aria-hidden="true">
-                <div class="fuego"></div>
-                <div class="fuego"></div>
-                <div class="fuego"></div>
-                <div class="fuego"></div>
-                <div class="fuego"></div>
-            </div>
-            <div class="cobertura"></div>
-            <div class="bizcocho"></div>
-            <h1>Happy Birthday!</h1>
-            <p style="color:var(--rose-gold-dark); font-weight: 600;">Friend</p>
-        </div>
-        <p class="text-lg font-roboto text-rose-gold-dark mt-4" id="wish-text">Pray for a wish and touch the candle to blow it out!</p>
-    </div>
-
-    <div class="paper" id="paper" role="region" aria-label="Birthday letter" tabindex="0">
-        <div class="letter" id="letter">
-            <h1 class="text-4xl font-pacifico mb-4">Happy Birthday Friend!</h1>
-            <p class="text-lg font-roboto mb-4 leading-relaxed">
-                Thanks for being my friend and a good listener. I could say this confidently: I am blessed to have a friend like you who says "enanalu pathukla". I knew I would say what I should only look after but deep down I felt okay if something goes wrong I could go and tell a person who never judges me but instead says "next time pathuklam". There are more to thank you about but since this is your birthday wish, I wish you a great life ahead and a happy happiest birthday you ever had. Wish we could stay friends forever and whatever you wish will definitely happen soon because you have gone through many struggles. Hereafter your life will only be filled and turned into a beautiful garden of flowers. I mean that much happiness... stay stronger and happier than you have ever lived before. If something happens, don't ever think twice, call me anytime. Even if I am in a situation where I could not pick, I would definitely try to come and pick your call. Speak and so my friend, happy birthday like it's your 21st, right? Happy 21!
-            </p>
-            <p class="text-lg font-roboto">By,</p>
-            <p class="text-lg font-roboto mb-6 font-semibold">Your all time friend</p>
-            <div class="heart-container mt-6">
-                <i class="fas fa-handshake handshake-icon text-3xl" onclick="showFireworks()" aria-label="Handshake icon to celebrate birthday" role="button" tabindex="0"></i>
-                <div class="arrow" aria-hidden="true">
-                    <i class="fas fa-arrow-right text-rose-gold-dark text-2xl"></i>
+<body>
+    <div class="main-content">
+        <main class="fade-in" role="main" aria-label="Birthday greeting and letter">
+            <section aria-label="Birthday cake and greeting" class="flex flex-col items-center">
+                <div class="cake" onclick="blowCandles()" role="button" tabindex="0" aria-label="Birthday cake, click to blow candles" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); blowCandles(); }">
+                    <div class="velas" aria-hidden="true">
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                        <div class="fuego"></div>
+                    </div>
+                    <div class="cobertura"></div>
+                    <div class="bizcocho"></div>
+                    <h1>Happy Birthday!</h1>
+                    <p style="color:var(--rose-gold-dark); font-weight: 600;">Friend</p>
                 </div>
-            </div>
-            <p class="text-lg font-roboto mt-4">Touch the handshake after praying for something!</p>
-        </div>
+                <p id="wish-text" class="text-center text-rose-gold-dark" style="font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1.125rem; max-width: 320px; margin: 0.5rem 1rem 1rem;">
+                    Pray for a wish and touch the candle to blow it out!
+                </p>
+            </section>
+
+            <section id="paper" class="paper" role="region" aria-label="Birthday letter" tabindex="0">
+                <article class="letter" id="letter">
+                    <h1>Happy Birthday Friend!</h1>
+                    <p>
+                        Thanks for being my friend and a good listener. I could say this confidently: I am blessed to have a friend like you who says "enanalu pathukla". I knew I would say what I should only look after but deep down I felt okay if something goes wrong I could go and tell a person who never judges me but instead says "next time pathuklam". There are more to thank you about but since this is your birthday wish, I wish you a great life ahead and a happy happiest birthday you ever had. Wish we could stay friends forever and whatever you wish will definitely happen soon because you have gone through many struggles. Hereafter your life will only be filled and turned into a beautiful garden of flowers. I mean that much happiness... stay stronger and happier than you have ever lived before. If something happens, don't ever think twice, call me anytime. Even if I am in a situation where I could not pick, I would definitely try to come and pick your call. Speak and so my friend, happy birthday like it's your 20th, right? Happy 20!
+                    </p>
+                    <p>By your recent friend,</p>
+                    <p class="mb-6 font-semibold">so yeah be happy life is certain many happy things will happen to you, dont think about unwanted things clear your mind and do whatever you mind and heart tells you to do first listen to heart cross check with mind and to the thing and pray to god everthing will be succeeded..</p>
+                    <div class="heart-container">
+                        <i class="fas fa-handshake handshake-icon" onclick="showFireworks()" aria-label="Handshake icon to celebrate birthday" role="button" tabindex="0" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); showFireworks(); }"></i>
+                        <div class="arrow" aria-hidden="true">
+                            <i class="fas fa-arrow-right text-rose-gold-dark text-2xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-center" style="font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1rem; margin-top: 1rem;">
+                        Touch the handshake after praying for something!
+                    </p>
+                </article>
+            </section>
+        </main>
     </div>
 
     <div class="fireworks" id="fireworks" role="alert" aria-live="assertive">
@@ -378,20 +527,26 @@
 
     <script>
         function blowCandles() {
-            document.querySelector('.cake').style.display = 'none';
-            document.getElementById('wish-text').style.display = 'none';
+            const cake = document.querySelector('.cake');
+            const wishText = document.getElementById('wish-text');
+            if (!cake || !wishText) return;
+            cake.style.display = 'none';
+            wishText.style.display = 'none';
             setTimeout(() => {
                 const paper = document.getElementById('paper');
                 paper.classList.add('open');
                 document.getElementById('letter').classList.add('open');
-                // Focus the paper for accessibility and to enable scrolling with keyboard
                 paper.focus();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 500);
         }
 
         function showFireworks() {
-            document.getElementById('paper').style.display = 'none';
-            document.getElementById('fireworks').classList.add('open');
+            const paper = document.getElementById('paper');
+            const fireworks = document.getElementById('fireworks');
+            if (!paper || !fireworks) return;
+            paper.style.display = 'none';
+            fireworks.classList.add('open');
             startFireworks();
         }
 
@@ -418,8 +573,8 @@
                 }
 
                 onClick(evt) {
-                    let x = evt.clientX || evt.touches && evt.touches[0].pageX;
-                    let y = evt.clientY || evt.touches[0].pageY;
+                    let x = evt.clientX || (evt.touches && evt.touches[0].pageX);
+                    let y = evt.clientY || (evt.touches && evt.touches[0].pageY);
                     let count = random(3, 5);
                     for (let i = 0; i < count; i++) this.fireworks.push(new Firework(
                         random(this.spawnA, this.spawnB),
